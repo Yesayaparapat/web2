@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment 3</title>
+</head>
+<body>
+    <script>
+        // Declare an array containing a single element "Yesaya"
+        var FirstName = ["Yesaya"];
+
+        // Declare an array containing student IDs
+        var IDStudent = [2, 2, 8, 1, 0, 5, 4];
+        
+        // Array of foods
+        var foods = ["Fried Rice", "Batagor", "Meatball", "Fried Noodles", "Fried Chicken"];
+
+        // Push a new food item based on FirstName and the last two digits of IDStudent
+        var newFood = FirstName[0] + IDStudent.slice(-2).join("") + "gadogado";
+        foods.push(newFood);
+
+        // Pop the last item from the foods array
+        foods.pop();
+
+        // Shift the first item from the foods array
+        foods.shift();
+
+        // Slice a subarray from index 2 to 4 (exclusive)
+        var subArray = foods.slice(2, 4);
+
+        // Concatenate arrays: foods, drinks, FirstName, and IDStudent
+        var drinks = ["Orange Jus", "Milk", "Coca Cola", "Fanta"];
+        var foodsdrink = foods.concat(drinks, FirstName, IDStudent);
+
+        // Sort the foods array
+        foods.sort();
+
+        // Reverse the order of elements in the foods array
+        foods.reverse();
+
+        // Join elements of the foods array into a string separated by ', '
+        var arrayAsString = foods.join(', ');
+
+        // Split the string back into an array using ', ' as a separator
+        var stringToArray = arrayAsString.split(', ');
+
+        // Log the concatenated array
+        console.log(foodsdrink);
+
+        // Log the modified foods array
+        console.log(foods);
+
+        // Log the subarray created by the slice operation
+        console.log(subArray);
+
+        // Log the sorted and reversed foods array
+        console.log("Sorted and Reversed Foods:", foods);
+
+        // Log the foods array as a string
+        console.log("Array as String:", arrayAsString);
+
+        // Log the string converted back to an array
+        console.log("String to Array:", stringToArray);
+    </script>
+</body>
+</html>

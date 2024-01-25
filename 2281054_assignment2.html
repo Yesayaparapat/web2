@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript function</title>
+</head>
+<body>
+    <script>
+
+        // Task 1
+        function YesayaMusicSwimingMultiply(music, swiming) {
+            return music * swiming;
+        }
+
+        const resultMultiply = YesayaMusicSwimingMultiply(3, 5);
+        console.log(resultMultiply); 
+
+        function YesayaMusicSwimingDivision(music, swiming, divisor) {
+            return (music * swiming) / divisor;
+        }
+
+        const divisionResult = YesayaMusicSwimingDivision(10, 2, 2);
+        console.log(divisionResult); 
+
+        function YesayaMusicSwimingModulus(music, swiming, divisor1, divisor2) {
+            return (music * swiming) % (divisor1 * divisor2);
+        }   
+
+        const modulusResult = YesayaMusicSwimingModulus(8, 3, 2, 2);
+        console.log(modulusResult); 
+
+        // Task 2
+        const YesayaMusicSwimingMultiplyArrow = (music, swiming) => music * swiming;
+
+        const resultArrow = YesayaMusicSwimingMultiplyArrow(3, 5);
+        console.log(resultArrow);
+
+        const YesayaMusicSwimingDivisionArrow = (music, swiming, divisor) => (music * swiming) / divisor;
+
+        const divisionResultArrow = YesayaMusicSwimingDivisionArrow(10, 2, 2);
+        console.log(divisionResultArrow);
+
+        const YesayaMusicSwimingModulusArrow = (music, swiming, divisor1, divisor2) =>
+            (music * swiming) % (divisor1 * divisor2);
+
+        const modulusResultArrow = YesayaMusicSwimingModulusArrow(8, 3, 2, 2);
+        console.log(modulusResultArrow);
+
+        // Task 3
+        const generateBookRecommendation = (genre, mood) => {
+            const genres = ["Romance", "Historical Fiction", "Biography", "Self-Help"];
+            const moods = ["Exciting", "Cozy", "Inspiring", "Humorous"];
+
+            if (genres.includes(genre) && moods.includes(mood)) {
+                return `For a ${mood.toLowerCase()} ${genre.toLowerCase()} experience, try reading "Pride and Prejudice".`;
+            } else {
+                return "Sorry, I don't have a recommendation for that combination.";
+            }
+        };
+
+        const bookRecommendation = generateBookRecommendation("Romance", "Exciting");
+        console.log(bookRecommendation);
+
+        // Task 4
+        function playSwimmingGame() {
+            const swimmerName = "Michael";
+
+            function cheer() {
+                console.log(`${swimmerName} dives in, and it's a perfect freestyle swim!`);
+            }
+
+            cheer();
+        }
+
+        playSwimmingGame();
+
+    </script>
+</body>
+</html>
