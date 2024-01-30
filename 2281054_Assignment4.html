@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Assignment4</title>
+  </head>
+  <body>
+    <script>
+      let StudentPortfolio = { 
+        name: "Yesaya Parapat",
+        studentID: "2281054",
+        birthdate: "21 Maret 2004",
+        courses: ["Web2 - TI"],
+        skills: ["Design web"],
+ 
+        addCourse: function(courseName) {
+          this.courses.push(courseName);
+        },
+
+        addSkill: function(skill) {
+          this.skills.push(skill);
+        },
+
+        getAge: function() {
+          const today = new Date();
+          const birthdate = new Date(this.birthdate);
+          let age = today.getFullYear() - birthdate.getFullYear();
+          const monthDiff = today.getMonth() - birthdate.getMonth();
+
+          if(monthDiff < 0 || (monthDiff ===0 && today.getDate() < birthdate.getDate())) {
+            age--;
+          }
+          return age;
+        },
+        
+        displayPortfolio() {
+          console.log("Name:", this.name);
+          console.log("Student ID:", this.studentID);
+          console.log("Birthdate:", this.birthdate);
+          console.log("Courses:", this.courses.join(", "));
+          console.log("Skills:", this.skills.join(", "));
+        },
+      };
+
+      
+      const myPortfolio = Object.create(StudentPortfolio);
+
+      
+      myPortfolio.name = "Yesaya Parapat";
+      myPortfolio.studentID = "2281054";
+      myPortfolio.birthdate = "21 Maret 2004";
+
+      
+      myPortfolio.addCourse("web proggraming");
+      myPortfolio.addCourse("make the web");
+      myPortfolio.addSkill("Editing");
+      myPortfolio.addSkill("create");
+
+  
+      console.log("Age:", myPortfolio.getAge());
+      console.log("\nStudent portofolio:");
+      myPortfolio.displayPortfolio();
+    </script>
+  </body>
+</html>

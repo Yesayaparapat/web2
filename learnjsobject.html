@@ -1,49 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Learn JS Object</title>
-</head>
-<body>
+  </head>
+  <body>
     <script>
-        const student = {
-            name : "Yesaya",
-            studentID : "2281054",
-            gender : "Male",
-            major : "Informatics Engineering",
-            hello : function(){
-                console.log("Hello " + this.name + "!");
-            }
-        }
+      const student = {
+        name: "Yesaya",
+        studentID: "2281054",
+        gender: "Male",
+        major: "Informatics Engineering",
+        hello: function () {
+          console.log("Hello " + this.name + "!");
+        },
+      };
 
-        console.log(student.name);
-        console.log(student.studentID);
-        console.log(student["gender"]);
-        console.log(student["major"]);
+      console.log(student.name);
+      console.log(student.studentID);
+      console.log(student["gender"]);
+      console.log(student["major"]);
 
-        student.name = "Budi";
-        console.log(student.name);
+      student.name = "Budi";
+      console.log(student.name);
 
-        // Call a method
-        student.hello();
+      // Call a method
+      student.hello();
 
-        function Student(name, studentID, gender, major) {
-            this.name = name;
-            this.studentID = studentID;
-            this.gender = gender;
-            this.major = major;
-        }
+      function Student(name, studentID, gender, major) {
+        this.name = name;
+        this.studentID = studentID;
+        this.gender = gender;
+        this.major = major;
+      }
 
-        let student1 = new Student("Abdul", "123", "Male", "IS");
-        let student2 = new Student("Badu", "231", "Male", "IE");
-        let student3 = new Student("Cecep", "456", "Famale", "IE");
+      let student1 = new Student("Abdul", "123", "Male", "IS");
+      let student2 = new Student("Badu", "231", "Male", "IE");
+      let student3 = new Student("Cecep", "456", "Famale", "IE");
 
-        console.log(student1.name);
-        console.log(student2.name);
-        console.log(student3.gender);
-        
+      console.log(student1.name);
+      console.log(student2.name);
+      console.log(student3.gender);
 
+      let shoppingCart = {
+        items: [],
+        addItem: function (item) {
+          this.items.push(item); 
+        },
+        removeItem: function (item) {
+          let index = this.items.findIndex((i) => i.name === item.name && i.price === item.price);
+          if (index >= 0) {
+            this.items.splice(index, 1);
+          }
+        },
+        total: function () {
+          let total = 0;
+          for (let i = 0; i < this.items.length; i++) {
+            total += this.items[i].price;
+          }
+          return total;
+        },
+      };
+
+      shoppingCart.addItem({ name: "Shirt", price: 20 });
+      shoppingCart.addItem({ name: "Pants", price: 30 });
+      shoppingCart.addItem({ name: "Socks", price: 5 });
+      shoppingCart.addItem({ name: "Umbrella", price: 25 });
+
+      shoppingCart.removeItem({ name: "Pants", price: 30 }); 
+      console.log(shoppingCart.items);
+
+      shoppingCart.removeItem({ name: "Socks", price: 5 });
+
+      console.log(shoppingCart.total());
     </script>
-</body>
+  </body>
 </html>
